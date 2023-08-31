@@ -58,7 +58,7 @@ $(document).ready(function () {
                 createRow(searchVal);
             }
             // removes old content
-            $("#today").empty();
+            $("#now").empty();
 
             var title = $("<h3>").addClass("card-title").text(data.name + " (" + new Date().toLocaleDateString() + ")");
             var img = $("<img>").attr("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
@@ -96,7 +96,7 @@ $(document).ready(function () {
                 }
 
                 cardBody.append(uvIndex);
-                $("#today .card-body").append(uvIndex.append(btn));
+                $("#now .card-body").append(uvIndex.append(btn));
 
             });
 
@@ -104,7 +104,7 @@ $(document).ready(function () {
             title.append(img);
             cardBody.append(title, temp, humid, wind);
             card.append(cardBody);
-            $("#today").append(card);
+            $("#now").append(card);
             console.log(data);
         });
     }
